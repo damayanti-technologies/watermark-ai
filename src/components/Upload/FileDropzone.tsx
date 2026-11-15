@@ -171,7 +171,8 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    onSampleSelect('/samples/photo-watermark-1.jpg', 'Landscape Photo (Watermarked)');
+                    const b = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+                    onSampleSelect(`${b}samples/photo-watermark-1.png`, 'Landscape Photo (Watermarked)');
                   }}
                   className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-indigo-400 hover:text-indigo-600 text-slate-700 font-medium transition-colors shadow-2xs"
                 >
@@ -181,7 +182,8 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    onSampleSelect('/samples/photo-watermark-2.png', 'Product Graphic (With Logo)');
+                    const b = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+                    onSampleSelect(`${b}samples/photo-watermark-2.png`, 'Product Graphic (With Logo)');
                   }}
                   className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-indigo-400 hover:text-indigo-600 text-slate-700 font-medium transition-colors shadow-2xs"
                 >

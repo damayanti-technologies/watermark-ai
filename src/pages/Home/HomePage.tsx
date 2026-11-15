@@ -143,8 +143,8 @@ export const HomePage: React.FC = () => {
 
         <div className="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200/90 shadow-sm">
           <BeforeAfterSlider
-            originalSrc="/samples/photo-watermark-1.png"
-            processedSrc="/samples/photo-watermark-1-clean.png"
+            originalSrc={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`}samples/photo-watermark-1.png`}
+            processedSrc={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`}samples/photo-watermark-1-clean.png`}
             originalLabel="Watermarked Original (Corner Badge & Diagonal Stamp)"
             processedLabel="Inpainted & Restored (Seamless Fill)"
           />

@@ -1,7 +1,8 @@
 import * as ort from 'onnxruntime-web';
 
 // Configure local WASM assets
-ort.env.wasm.wasmPaths = '/ort/';
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+ort.env.wasm.wasmPaths = `${baseUrl}ort/`;
 ort.env.wasm.numThreads = Math.min(4, navigator.hardwareConcurrency || 2);
 
 export interface ModelLoadingState {

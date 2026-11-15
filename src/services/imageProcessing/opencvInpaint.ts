@@ -39,7 +39,8 @@ export const loadOpenCV = (onProgress?: (msg: string) => void): Promise<any> => 
 
     const script = document.createElement('script');
     script.id = 'opencv-script';
-    script.src = '/libs/opencv.js';
+    const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+    script.src = `${baseUrl}libs/opencv.js`;
     script.async = true;
 
     script.onload = () => {
